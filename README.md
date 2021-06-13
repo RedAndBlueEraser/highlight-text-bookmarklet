@@ -20,7 +20,7 @@ The following desktop browsers were tested and support the bookmarklets.
 ## Installation
 Unhide the web browser's bookmarks toolbar.
 
-Drag either the `Highlight Text` and/or `Format Text` hyperlinks from [here](https://127.0.0.1) into the web browser's bookmarks toolbar.
+Drag either the `Highlight Text` and/or `Format Text` hyperlinks from [here](https://htmlpreview.github.io/?https://github.com/RedAndBlueEraser/highlight-text-bookmarklet/blob/master/installer.html) into the web browser's bookmarks toolbar.
 
 ## Usage
 
