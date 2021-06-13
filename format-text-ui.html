@@ -1,0 +1,186 @@
+      <!DOCTYPE html>
+      <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+          <style>
+          * {
+            box-sizing: border-box;
+          }
+          html {
+            font-size: 12px;
+          }
+          body {
+            display: inline-block;
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+            font-size: 1rem;
+            line-height: 1.5;
+            margin: 0;
+            -webkit-tap-highlight-color: rgba(0,0,0,0);
+            -webkit-text-size-adjust: 100%;
+          }
+          button, input {
+            font-family: inherit;
+            font-size: inherit;
+            line-height: inherit;
+            margin: 0;
+          }
+          button {
+            -webkit-appearance: button;
+            border-radius: 0;
+            text-transform: none;
+          }
+          button:focus:not(:focus-visible) {
+            outline: 0;
+          }
+          ::-moz-focus-inner {
+            border-style: none;
+            padding: 0;
+          }
+          main {
+            background: padding-box #fff;
+            border: 1px solid rgba(0,0,0,.15);
+            border-radius: .25rem;
+            color: #212529;
+            display: inline-grid;
+            gap: .5rem 2px;
+            grid: [font-style grayscale] 2rem [color] 2rem [cancel] 2rem / repeat(12, 2rem);
+            padding: .5rem;
+          }
+          @media (prefers-color-scheme: dark) {
+            main {
+              background-color: #343a40;
+              color: #dee2e6;
+            }
+          }
+          .text-format-picker-item {
+            background-color: #fff;
+            border: 1px solid #dee2e6;
+            border-radius: 1px;
+            padding: 0;
+            position: relative;
+            text-align: center;
+            transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+            vertical-align: middle;
+          }
+          @media (prefers-reduced-motion: reduce) {
+            .text-format-picker-item {
+              transition: none;
+            }
+          }
+          .text-format-picker-item:focus {
+            border-color: #ffc107;
+            box-shadow: 0 0 0 .25rem rgba(255,193,7,.5);
+            outline: 0;
+            z-index: 1;
+          }
+          .text-format-picker-item:hover {
+            border-color: #ffc107;
+          }
+          .text-format-picker-item-bold,
+          .text-format-picker-item-italic,
+          .text-format-picker-item-underline,
+          .text-format-picker-item-strikethrough {
+            font-family: Verdana, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+            grid-row-start: font-style;
+          }
+          .text-format-picker-item-bold,
+          .text-format-picker-item-italic,
+          .text-format-picker-item-underline {
+            font-size: 1.166667rem;
+          }
+          .text-format-picker-item-bold {
+            font-weight: bold;
+          }
+          .text-format-picker-item-italic {
+            font-style: italic;
+          }
+          .text-format-picker-item-underline {
+            text-decoration: underline;
+          }
+          .text-format-picker-item-strikethrough {
+            text-decoration: line-through;
+          }
+          .text-format-picker-item-color {
+            grid-row: color;
+          }
+          .text-format-picker-item-color-black,
+          .text-format-picker-item-color-gray,
+          .text-format-picker-item-color-silver,
+          .text-format-picker-item-color-white {
+            grid-row: grayscale;
+          }
+          .text-format-picker-item-color-black {
+            grid-column: 6;
+          }
+          .text-format-picker-item-color-gray {
+            grid-column: 7;
+          }
+          .text-format-picker-item-color-silver {
+            grid-column: 8;
+          }
+          .text-format-picker-item-color-white {
+            grid-column: 9;
+          }
+          .text-format-picker-item-color-picker {
+            grid-area: color / auto / auto / span 2;
+            height: 100%;
+            padding: .25rem .5rem;
+            width: 100%;
+          }
+          .text-format-picker-item-color-picker::-moz-color-swatch {
+            border-radius: 1px;
+          }
+          .text-format-picker-item-color-picker::-webkit-color-swatch {
+            border-radius: 1px;
+          }
+          .text-format-picker-item-color-picker::-webkit-color-swatch-wrapper {
+            padding: 0;
+          }
+          .text-format-picker-item-cancel {
+            color: #212529;
+            grid-area: cancel / auto / auto / span 12;
+          }
+          </style>
+          <script>
+          document.addEventListener("DOMContentLoaded", () => {
+            for (const textFormatPickerItemColor of document.getElementsByClassName("text-format-picker-item-color")) {
+              const textFormatPickerValueKeyValuePairs = {};
+              for (const keyValuePair of textFormatPickerItemColor.getAttribute("data-text-format-picker-value").trim().split(/\s*&\s*/g)) {
+                const { 0: key, 1: value } = keyValuePair.split(/\s*=\s*/g);
+                textFormatPickerValueKeyValuePairs[key] = value;
+              }
+              textFormatPickerItemColor.style.backgroundColor = textFormatPickerValueKeyValuePairs["background-color"];
+            }
+          });
+          </script>
+        </head>
+        <body>
+          <main>
+            <button class="text-format-picker-item text-format-picker-item-bold" title="Bold" aria-label="Bold" data-text-format-picker-value="font-weight=bold"><span aria-hidden="true">B</span></button>
+            <button class="text-format-picker-item text-format-picker-item-italic" title="Italic" aria-label="Italic" data-text-format-picker-value="font-style=italic"><span aria-hidden="true">I</span></button>
+            <button class="text-format-picker-item text-format-picker-item-underline" title="Underline" aria-label="Underline" data-text-format-picker-value="text-decoration=underline"><span aria-hidden="true">U</span></button>
+            <button class="text-format-picker-item text-format-picker-item-strikethrough" title="Strikethrough" aria-label="Strikethrough" data-text-format-picker-value="text-decoration=line-through"><span aria-hidden="true">ab</span></button>
+
+            <button class="text-format-picker-item text-format-picker-item-color text-format-picker-item-color-black" title="Black" aria-label="Black" data-text-format-picker-value="background-color=black"></button>
+            <button class="text-format-picker-item text-format-picker-item-color text-format-picker-item-color-gray" title="Gray" aria-label="Gray" data-text-format-picker-value="background-color=gray"></button>
+            <button class="text-format-picker-item text-format-picker-item-color text-format-picker-item-color-silver" title="Silver" aria-label="Silver" data-text-format-picker-value="background-color=silver"></button>
+            <button class="text-format-picker-item text-format-picker-item-color text-format-picker-item-color-white" title="White" aria-label="White" data-text-format-picker-value="background-color=white"></button>
+
+            <button class="text-format-picker-item text-format-picker-item-color" title="Maroon" aria-label="Maroon" data-text-format-picker-value="background-color=maroon"></button>
+            <button class="text-format-picker-item text-format-picker-item-color" title="Red" aria-label="Red" data-text-format-picker-value="background-color=red"></button>
+            <button class="text-format-picker-item text-format-picker-item-color" title="Orange" aria-label="Orange" data-text-format-picker-value="background-color=orange"></button>
+            <button class="text-format-picker-item text-format-picker-item-color" title="Yellow" aria-label="Yellow" data-text-format-picker-value="background-color=yellow"></button>
+            <button class="text-format-picker-item text-format-picker-item-color" title="Lime" aria-label="Lime" data-text-format-picker-value="background-color=lime"></button>
+            <button class="text-format-picker-item text-format-picker-item-color" title="Aqua" aria-label="Aqua" data-text-format-picker-value="background-color=aqua"></button>
+            <button class="text-format-picker-item text-format-picker-item-color" title="Blue" aria-label="Blue" data-text-format-picker-value="background-color=blue"></button>
+            <button class="text-format-picker-item text-format-picker-item-color" title="Navy" aria-label="Navy" data-text-format-picker-value="background-color=navy"></button>
+            <button class="text-format-picker-item text-format-picker-item-color" title="Purple" aria-label="Purple" data-text-format-picker-value="background-color=purple"></button>
+            <button class="text-format-picker-item text-format-picker-item-color" title="Fuchsia" aria-label="Fuchsia" data-text-format-picker-value="background-color=fuchsia"></button>
+
+            <input class="text-format-picker-item text-format-picker-item-color-picker" type="color" value="#ffff00" title="Color picker" aria-label="Color picker">
+
+            <button class="text-format-picker-item text-format-picker-item-cancel" title="Fuchsia" aria-label="Cancel">Cancel</button>
+          </main>
+        </body>
+      </html>
