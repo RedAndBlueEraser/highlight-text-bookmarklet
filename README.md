@@ -13,9 +13,9 @@ The bookmarklets should work on most web browsers.
 
 The following desktop browsers were tested and support the bookmarklets.
 
-    Edge 90+
-    Firefox 72+
-    Chrome 91+
+- Edge 90+
+- Firefox 72+
+- Chrome 91+
 
 ## Installation
 Unhide the web browser's bookmarks toolbar.
