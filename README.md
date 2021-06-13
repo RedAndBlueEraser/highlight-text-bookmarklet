@@ -1,7 +1,7 @@
 # Highlight Text and Format Text Bookmarklets
 A bookmarklet to highlight selected text on a currently viewing webpage, and a bookmarklet to format selected text on a currently viewing webpage.
 
-![Image of Highlight Text and Format Text bookmarklets](https://127.0.0.1)
+<img src="https://github.com/RedAndBlueEraser/highlight-text-bookmarklet/raw/master/demo.png" alt="Image of Highlight Text and Format Text bookmarklets" width="768">
 
 ## Synopsis
 The `highlight-text-bookmarklet.js` bookmarklet (and its minified counterpart `highlight-text-bookmarklet.min.js`) highlights selected text on a currently viewing webpage. The selected text is wrapped in the `<mark>` HTML element. On most web browsers, the browser default CSS styling for the `<mark>` HTML element is a yellow coloured background on the element.
@@ -32,13 +32,14 @@ To change from the default highlight colour, edit the bookmarklet's JavaScript c
 ### Format Text
 Select the text on a webpage to be formatted, and then click on the `Format Text` bookmarklet. A floating menu appears presenting options to bold, italicise, underline, strikethrough, or highlight text in various colours. Click on a format option to format the selected text and deselect the text, or click on "Cancel" to remove the floating menu without formatting the selected text.
 
-![Image of Format Text bookmarklet](https://127.0.0.1)
+![Image of Format Text bookmarklet](https://github.com/RedAndBlueEraser/highlight-text-bookmarklet/raw/master/ui.png)
 
 ## Notes
 - The Highlight Text bookmarklet uses the `<mark>` HTML element to highlight text. On most web browsers, the browser default CSS styling is a yellow coloured background on the element. However, web browsers are free to implement different browser default CSS styling rules for the `<mark>` element, and the Highlight Text bookmarklet will use those CSS styling rules. Furthermore, the webpage can define custom CSS styles to override the browser default styles for the `<mark>` element. The Format Text bookmarklet minimises the likelihood of this occurring by using the `<formatted-text>` custom HTML element instead.
 - On Chromium based web browsers (Google Chrome and Microsoft Edge), using the Format Text bookmarklet with "Select All" on a webpage may not work. When clicking on a format option in the Format Text floating menu, the selected text is deselected and formatting is not applied. To work around this issue, use the keyboard tab/shift + tab keys to select a format option in the Format Text floating menu, instead of clicking with a mouse.
 - Some webpages may have set Content Security Policy that prevents the Format Text bookmarklet from working. The Format Text bookmarklet has been written to bypass some of these security measures, but there are still certain situations where the Format Text bookmarklet will fail (e.g. only third-party style-src). In that case, the Format Text bookmarklet will fall back to highlighting the selected text with a yellow background.
 - These bookmarklets cannot highlight and format text inside text boxes (e.g. `<input>` or `<textarea>`).
+- The Format Text floating menu will switch between dark mode and light mode based on the system's colour scheme preference.
 
 ## Author
 Harry Wong (RedAndBlueEraser)
