@@ -1,6 +1,6 @@
 /*
  * highlight-text-bookmarklet.js
- * Version 20210613
+ * Version 20220202
  * Written by Harry Wong (RedAndBlueEraser)
  */
 

@@ -1,6 +1,6 @@
 /*
  * format-text-bookmarklet.js
- * Version 20210613
+ * Version 20220202
  * Written by Harry Wong (RedAndBlueEraser)
  */
 
@@ -207,7 +207,7 @@
 
             <input class="text-format-picker-item text-format-picker-item-color-picker" type="color" value="#ffff00" title="Color picker" aria-label="Color picker">
 
-            <button class="text-format-picker-item text-format-picker-item-cancel" title="Fuchsia" aria-label="Cancel">Cancel</button>
+            <button class="text-format-picker-item text-format-picker-item-cancel" title="Cancel" aria-label="Cancel">Cancel</button>
           </main>
         </body>
       </html>
