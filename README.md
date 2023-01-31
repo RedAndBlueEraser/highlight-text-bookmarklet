@@ -42,4 +42,4 @@ Select the text on a webpage to be formatted, and then click on the `Format Text
 - The Format Text floating menu will switch between dark mode and light mode based on the system's colour scheme preference.
 
 ## Author
-Harry Wong (RedAndBlueEraser)
+RedAndBlueEraser
